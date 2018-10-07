@@ -1,0 +1,29 @@
+plugins {
+    id "net.ltgt.apt" version "0.10"
+}
+
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: "net.ltgt.apt"
+apply plugin: 'idea'
+
+mainClassName = 'dagger.App'
+
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    baseName = 'dagger2-spike'
+    version =  '0.1.0'
+}
+
+dependencies {
+    compile 'com.google.dagger:dagger:2.17'
+    apt 'com.google.dagger:dagger-compiler:2.17'
+}

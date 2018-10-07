@@ -4,8 +4,8 @@ package dagger;
 public class MyModule {
 
     @Provides
-    public MessageWriter provideGhostWriter() {
-        return new MessageWriter();
+    public MessageWriter provideGhostWriter(MyClock clock) {
+        return new MessageWriter(clock);
     }
 
     @Provides
